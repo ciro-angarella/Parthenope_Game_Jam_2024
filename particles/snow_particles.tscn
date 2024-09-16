@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b80mwjc8jueo6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ry6dr"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+gravity = Vector3(0, 20, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -1.0
+radial_accel_max = -1.0
+damping_min = 5.0
+damping_max = 5.0
+scale_min = 2.0
+scale_max = 5.0
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[node name="SnowParticles" type="GPUParticles2D"]
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_ry6dr")
+lifetime = 20.0
