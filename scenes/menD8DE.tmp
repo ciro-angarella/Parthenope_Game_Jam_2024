@@ -24,7 +24,6 @@ alignment = 1
 layout_mode = 2
 action_mode = 0
 text = "PLAY"
-icon_alignment = 1
 
 [node name="Guide" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
