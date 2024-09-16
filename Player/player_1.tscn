@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6ngud0sp55li"]
+
+[ext_resource type="Texture2D" uid="uid://dcef4og84o13q" path="res://Risorse/Pinguino.png" id="1_by5r5"]
+[ext_resource type="Script" path="res://Player/player_1.gd" id="2_xrr2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lg66l"]
+radius = 68.0
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("2_xrr2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(170.375, 192.25)
+scale = Vector2(0.257813, 0.246394)
+texture = ExtResource("1_by5r5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(167, 195)
+shape = SubResource("CircleShape2D_lg66l")
