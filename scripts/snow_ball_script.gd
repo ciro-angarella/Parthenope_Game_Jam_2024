@@ -26,3 +26,4 @@ func _process(delta):
 				scale.x = max_scale
 			if scale.y > max_scale:
 				scale.y = max_scale
+				
