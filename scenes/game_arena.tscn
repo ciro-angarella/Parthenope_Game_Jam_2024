@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://57ji4500j33w"]
+
+[ext_resource type="PackedScene" uid="uid://c6ngud0sp55li" path="res://Player/player_1.tscn" id="1_da66l"]
+[ext_resource type="Script" path="res://scripts/SceneManager.gd" id="1_ve2ce"]
+
+[node name="GameArena" type="Node2D" groups=["PlayerSpawns"]]
+script = ExtResource("1_ve2ce")
+PlayerScene = ExtResource("1_da66l")
+
+[node name="Player1" parent="." instance=ExtResource("1_da66l")]
+position = Vector2(78, -19)
+
+[node name="Player2" parent="." instance=ExtResource("1_da66l")]
+position = Vector2(558, 222)
+
+[node name="Player3" parent="." instance=ExtResource("1_da66l")]
+position = Vector2(82, 219)
+
+[node name="Player4" parent="." instance=ExtResource("1_da66l")]
+position = Vector2(549, -7)
