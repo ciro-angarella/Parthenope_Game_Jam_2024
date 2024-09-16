@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cdvl77pvvdxva"]
+[gd_scene load_steps=3 format=3 uid="uid://cdvl77pvvdxva"]
+
+[ext_resource type="Texture2D" uid="uid://b0nst4gvjidxr" path="res://icon.svg" id="2_62enr"]
+[ext_resource type="Script" path="res://snow_ball_script.gd" id="2_orb1b"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_62enr")
+script = ExtResource("2_orb1b")
