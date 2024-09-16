@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxoj7gi1ic04"]
+[gd_scene load_steps=3 format=3 uid="uid://dftwybla7l7r5"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_bv8y3"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_70sfi"]
+
+[sub_resource type="GDScript" id="GDScript_b5qhn"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	set_process(true)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_pressed(\"close_game\"):
+		get_tree().quit();
+"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +24,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bv8y3")
+script = SubResource("GDScript_b5qhn")
 
 [node name="SnowParticles" parent="." instance=ExtResource("2_70sfi")]
