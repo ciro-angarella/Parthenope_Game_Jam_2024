@@ -29,6 +29,9 @@ func _ready() -> void:
 	get_node("Snowball").scale = Vector2(snowballScale, snowballScale)
 
 func _physics_process(delta):
+	if GameManager.Players[self.playerIndex - 1].health <= 0:
+		self.queue_free()
+		GameManager.AlivePlayerIndices[self.playerIndex] = false
 	move(delta)
 	update_state()
 	update_ball_size(delta)
@@ -116,3 +119,18 @@ func update_ball_pos(pos: Vector2):
 		get_node("Snowball").z_index = 5
 	else:
 		get_node("Snowball").z_index = -5
+
+func _on_snowball_body_entered(body: Node2D) -> void:
+	if body == self:
+		return
+	if !(body is CharacterBody2D):
+		return
+	
+	var my_ball_size = snowballScale * 10
+	var opp_ball_size = body.get_node("Snowball").scale.x * 10
+	if my_ball_size >= opp_ball_size:
+		GameManager.damagePlayer(self.playerIndex)
+	else:
+		GameManager.damagePlayer(body.playerIndex)
+	GameManager.printAllPlayers()
+	

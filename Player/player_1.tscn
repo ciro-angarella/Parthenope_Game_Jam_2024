@@ -113,4 +113,4 @@ rotation = -3.14159
 scale = Vector2(1.02303, 1.00068)
 shape = SubResource("CircleShape2D_ch7fs")
 
-[connection signal="body_shape_entered" from="Snowball" to="." method="_on_snowball_body_shape_entered"]
+[connection signal="body_entered" from="Snowball" to="." method="_on_snowball_body_entered"]
