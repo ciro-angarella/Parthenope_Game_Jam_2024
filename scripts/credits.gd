@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _on_menu_pressed() -> void:
+	TouchSound.play()
 	var scene_to_load = "res://scenes/menu.tscn"  
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	

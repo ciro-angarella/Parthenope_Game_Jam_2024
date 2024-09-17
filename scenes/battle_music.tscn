@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://mlg5uyuyhux7"]
+[gd_scene load_steps=3 format=3 uid="uid://mlg5uyuyhux7"]
 
-[ext_resource type="AudioStream" uid="uid://ciuvyis33ewv1" path="res://Risorse/Suoni gioco/8 BIT Battaglia.wav" id="1_ct1vk"]
+[ext_resource type="AudioStream" uid="uid://c0i2j5ruej5wh" path="res://Risorse/Suoni gioco/TRACCIA BATTAGLIA.wav" id="1_gmeam"]
+[ext_resource type="Script" path="res://scripts/battle_music.gd" id="2_yu41y"]
 
 [node name="battleMusic" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_ct1vk")
+stream = ExtResource("1_gmeam")
+script = ExtResource("2_yu41y")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

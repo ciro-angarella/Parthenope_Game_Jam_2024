@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqmqkdf3krnm3"]
+[gd_scene load_steps=3 format=3 uid="uid://cqmqkdf3krnm3"]
 
-[ext_resource type="AudioStream" uid="uid://oxd315coeqw7" path="res://Risorse/Suoni gioco/8 BIT INTRO.wav" id="1_xipas"]
+[ext_resource type="AudioStream" uid="uid://p4ov0sgw4h7u" path="res://Risorse/Suoni gioco/8 BIT INTRO.wav" id="1_7oiya"]
+[ext_resource type="Script" path="res://scripts/musicplayer.gd" id="2_uuym0"]
 
 [node name="musicplayer" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_xipas")
-autoplay = true
+stream = ExtResource("1_7oiya")
+script = ExtResource("2_uuym0")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
