@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt4sqmum0uc8k"]
+[gd_scene load_steps=18 format=3 uid="uid://dn85dxbhmowb4"]
 
 [ext_resource type="Texture2D" uid="uid://76dunikuhhcr" path="res://Risorse/player_2/Down/frame 1_sprite_2.png" id="1_coo3n"]
 [ext_resource type="Texture2D" uid="uid://bdw1vqrp75mgl" path="res://Risorse/player_2/Down/frame 2_sprite_1.png" id="2_7orof"]
@@ -74,10 +74,17 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0tka"]
+radius = 10.8
+height = 48.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_aw2vd"]
 radius = 154.871
 
 [node name="player_2" type="CharacterBody2D"]
+z_as_relative = false
+scale = Vector2(2.5, 2.5)
+collision_mask = 7
 
 [node name="walk" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ykfq")
@@ -85,6 +92,7 @@ animation = &"down"
 frame_progress = 0.363914
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f0tka")
 
 [node name="Snowball" type="Area2D" parent="."]
 position = Vector2(23, 7)
