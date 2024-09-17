@@ -10,12 +10,10 @@ func _ready() -> void:
 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_play_pressed() -> void:
+	TouchSound.play()
+	MenuMusic.stop()
+	BattleMusic.play()
 	var scene_to_load = "res://scenes/arena.tscn"  
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	
@@ -25,10 +23,16 @@ func _on_play_pressed() -> void:
 
 
 func _on_guide_pressed() -> void:
-	pass # Replace with function body.
+	TouchSound.play()
+	var scene_to_load = "res://scenes/guide.tscn"  
+	var result = get_tree().change_scene_to_file(scene_to_load)
+	
+	if result != OK:
+		print("Errore nel caricamento della scena: ", result)
 
 
 func _on_information_pressed() -> void:
+	TouchSound.play()
 	var scene_to_load = "res://scenes/credits.tscn"  
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	

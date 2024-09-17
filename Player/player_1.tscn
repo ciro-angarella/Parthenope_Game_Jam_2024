@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc2wjxk0f6yh6"]
+[gd_scene load_steps=19 format=3 uid="uid://cxlnaqui6xihn"]
 
 [ext_resource type="Texture2D" uid="uid://c3ve1pjojx7mo" path="res://Risorse/orso/up/walk up 1.png" id="2_54pk5"]
 [ext_resource type="Script" path="res://Player/player_1.gd" id="2_xrr2w"]

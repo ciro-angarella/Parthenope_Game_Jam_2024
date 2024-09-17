@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://rcuwv0xs51cb"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_kiasy"]
+[ext_resource type="Texture2D" uid="uid://cpm2wcw6ljnjk" path="res://Risorse/sfondo_menu.png" id="2_vqh5w"]
+[ext_resource type="Texture2D" uid="uid://bjtn1yjdj2yvr" path="res://Risorse/Icone_menu/play (1).png" id="3_4q1nc"]
+[ext_resource type="Texture2D" uid="uid://d1bjgfkckeccr" path="res://Risorse/gametitle.png" id="3_ml3mt"]
+[ext_resource type="Texture2D" uid="uid://dko58ktumfc2k" path="res://Risorse/Icone_menu/passport (1).png" id="4_65xd7"]
+[ext_resource type="Texture2D" uid="uid://d2m4oborknsse" path="res://Risorse/Icone_menu/info (1).png" id="5_a3epl"]
+[ext_resource type="Texture2D" uid="uid://dswkqdkvnicja" path="res://Risorse/Icone_menu/letter-x (1).png" id="6_ayhh4"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -536.0
+offset_top = -275.0
+offset_right = -536.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kiasy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -440.0
+offset_top = -346.0
+offset_right = 840.0
+offset_bottom = 374.0
+scale = Vector2(1.62157, 1.71187)
+texture = ExtResource("2_vqh5w")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -32.9999
+offset_top = 74.0
+offset_right = 3598.0
+offset_bottom = 732.0
+scale = Vector2(0.318366, 0.427207)
+texture = ExtResource("3_ml3mt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 218.0
+offset_top = 298.0
+offset_right = 534.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.08463, 1.49873)
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="play" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4q1nc")
+
+[node name="guide" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_65xd7")
+
+[node name="information" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_a3epl")
+
+[node name="exit" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ayhh4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(537, 304)
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/guide" to="." method="_on_guide_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/information" to="." method="_on_information_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/exit" to="." method="_on_exit_pressed"]
