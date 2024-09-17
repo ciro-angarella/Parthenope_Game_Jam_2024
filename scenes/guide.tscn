@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dowqmwlx16m5o"]
+[gd_scene load_steps=5 format=3 uid="uid://dowqmwlx16m5o"]
 
 [ext_resource type="Script" path="res://scripts/guide.gd" id="1_qio43"]
+[ext_resource type="Texture2D" uid="uid://cl8kdcc5e5win" path="res://Risorse/Xbox Series/Default/xbox_stick_l.png" id="2_14xpy"]
+[ext_resource type="Texture2D" uid="uid://cq21oq1b0x6nw" path="res://Risorse/Xbox Series/Default/xbox_dpad_round.png" id="3_f5w2f"]
+[ext_resource type="Texture2D" uid="uid://cu38kmcqd8nhb" path="res://Risorse/Xbox Series/Default/xbox_button_a.png" id="4_kyd7d"]
 
 [node name="Guide" type="Control"]
 layout_mode = 3
@@ -16,9 +19,9 @@ metadata/_edit_use_anchors_ = true
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = -360.0
-offset_top = -40.0
-offset_right = 361.0
-offset_bottom = 64.0
+offset_top = -169.0
+offset_right = 433.0
+offset_bottom = 269.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -26,16 +29,77 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="scopo" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[b][color=blue]Lo scopo del gioco[/color][/b] è quello di [color=light_blue]eliminare gli avversari[/color] investendoli con la propria [color=white]palla di neve[/color], 
 che [color=light_blue]crescerà[/color] quanto più si corre, più sarà grande più male farà ai tuoi avversari! 
 Elimina tutti gli avversari dall'[color=silver]arena[/color] per vincere.
+
 "
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="movimento 1" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Per muoverti usa lo stick analogico sinistro 
+oppure le freccette direzionali
+
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Xbox_stick_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_14xpy")
+stretch_mode = 2
+
+[node name="Xbox_dpad" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_f5w2f")
+stretch_mode = 2
+
+[node name="movimento2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ricorda che una volta che avrai mosso il tuo personaggio non potrà più fermarsi!  Potrai però cambiare
+direzione in qualcunque momento.
+
+
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Xbox_button_A" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_kyd7d")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Per far crescere la tua palla di neve tieni premuto il tasto (A) mentre cammini, raccoglierai
+la neve davanti a te in una palla di neve gigante, ma  attento perchè sarai più lento!
+
+
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Attento a non farti colpire! Essere colpito da una palla di neve ti toglierà una vita e la tua palla di neve diventrà più piccola, ma non preoccuparti sarai invincibile per 3 secondi!
+
+"
+fit_content = true
+scroll_active = false
 
 [node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

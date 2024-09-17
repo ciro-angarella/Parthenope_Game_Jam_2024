@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cofthk4wtvnux"]
+[gd_scene load_steps=4 format=3 uid="uid://cofthk4wtvnux"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_u0uiu"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_atfd4"]
+[ext_resource type="Texture2D" uid="uid://v0moqh5vs8ry" path="res://Risorse/polastorti final .png" id="2_kki2c"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_u0uiu")
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1609.0
+offset_top = -1074.0
+offset_right = -1569.0
+offset_bottom = -1034.0
+scale = Vector2(82.6581, 55.3515)
+color = Color(7.52043e-08, 0.0622487, 0.0894943, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -225)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_kki2c")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -30,7 +45,9 @@ alignment = 1
 [node name="Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[b][color=#a0d6f3]Sound Design:[/color][/b]
+text = "
+
+[b][color=#a0d6f3]Sound Design:[/color][/b]
 [color=#e0e0e0][b]Aprea Emanuele[/b][/color]
 
 [b][color=#c4e0e5]Graphic Design:[/color][/b]
