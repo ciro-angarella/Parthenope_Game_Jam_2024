@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcef4og84o13q"
-path="res://.godot/imported/Pinguino.png-187a4c4920ee00ed224952e3a2986479.ctex"
+uid="uid://bgg1icdj0aypg"
+path="res://.godot/imported/1.png-dd99a593a1e6a2cb395437371313a5b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Risorse/Pinguino.png"
-dest_files=["res://.godot/imported/Pinguino.png-187a4c4920ee00ed224952e3a2986479.ctex"]
+source_file="res://Player/1.png"
+dest_files=["res://.godot/imported/1.png-dd99a593a1e6a2cb395437371313a5b1.ctex"]
 
 [params]
 
