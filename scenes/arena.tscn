@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dnx4evcgfal3v"]
+[gd_scene load_steps=6 format=4 uid="uid://dnx4evcgfal3v"]
 
 [ext_resource type="Texture2D" uid="uid://bvnq7rk6si6n" path="res://Risorse/TileSheet_Finale.png" id="2_1v1fd"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_ahna2"]
+[ext_resource type="PackedScene" uid="uid://c6ngud0sp55li" path="res://Player/player_1.tscn" id="3_6ob05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2xuc"]
 texture = ExtResource("2_1v1fd")
@@ -213,3 +214,19 @@ zoom = Vector2(0.8, 0.8)
 
 [node name="SnowParticles" parent="." instance=ExtResource("2_ahna2")]
 position = Vector2(300, -500)
+
+[node name="Player1" parent="." instance=ExtResource("3_6ob05")]
+position = Vector2(575, 269)
+playerIndex = 1
+
+[node name="Player2" parent="." instance=ExtResource("3_6ob05")]
+position = Vector2(606, 7.00001)
+playerIndex = 2
+
+[node name="Player3" parent="." instance=ExtResource("3_6ob05")]
+position = Vector2(83, 275)
+playerIndex = 3
+
+[node name="Player4" parent="." instance=ExtResource("3_6ob05")]
+position = Vector2(66, -14)
+playerIndex = 4

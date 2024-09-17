@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var MAX_SPEED = 300
 @export var ACCELERATION = 1500
+@export var playerIndex: int
 
 @onready var axis = Vector2.ZERO
 @onready var walk_animation = $walk  # Nodo AnimationPlayer del personaggio
@@ -11,6 +12,7 @@ var offset_right = Vector2(0, 0)   # Sposta a destra
 var offset_left = Vector2(-100, -45)   # Sposta a sinistra
 var offset_up = Vector2(0, -70)     # Sposta in alto
 var offset_down = Vector2(-45, 0)    # Sposta in basso
+var playerIndexString
 
 # Stati per la macchina a stati
 enum State {
@@ -23,13 +25,16 @@ enum State {
 
 var current_state = State.IDLE
 
+func _ready() -> void:
+	playerIndexString = str(playerIndex)
+
 func _physics_process(delta):
 	move(delta)
 	update_state()
 
 func get_input_axis() -> Vector2:
-	var x_input = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
-	var y_input = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
+	var x_input = int(Input.is_action_pressed("move_right_" + playerIndexString)) - int(Input.is_action_pressed("move_left_" + playerIndexString))
+	var y_input = int(Input.is_action_pressed("move_down_" + playerIndexString)) - int(Input.is_action_pressed("move_up_" + playerIndexString))
 
 	# Se c'è già velocità lungo l'asse x, ignora l'asse y
 	if velocity.x != 0:

@@ -4,20 +4,18 @@ const NUM_PLAYERS = 4
 const COMPRESSION_TYPE = ENetConnection.COMPRESS_RANGE_CODER
 
 @export var Address = "127.0.0.1"
-@export var Port = 8910
+@export var Port = 11111
 
 var peer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	multiplayer.peer_connected.connect(PlayerConnected)
 	multiplayer.peer_disconnected.connect(PlayerDisconnected)
 	multiplayer.connected_to_server.connect(ConnectedToServer)
 	multiplayer.connection_failed.connect(ConnectionFailed)
-	pass # Replace with function body.
+	if "--server" in OS.get_cmdline_args():
+		HostGame()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -40,7 +38,7 @@ func SendPlayerInfo(name, id):
 		GameManager.Players[id] = {
 			"name": name,
 			"id": id,
-			"score": 0
+			"health": 5
 		}
 	if multiplayer.is_server():
 		for p in GameManager.Players:
@@ -52,7 +50,7 @@ func StartGame():
 	get_tree().root.add_child(scene)
 	self.hide()
 
-func _on_host_button_down() -> void:
+func HostGame():
 	peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(Port, NUM_PLAYERS)
 	if error != OK:
@@ -63,6 +61,9 @@ func _on_host_button_down() -> void:
 	multiplayer.set_multiplayer_peer(peer)
 	print("waiting for players")
 	SendPlayerInfo($LineEdit.text, multiplayer.get_unique_id())
+
+func _on_host_button_down() -> void:
+	HostGame()
 
 func _on_join_button_down() -> void:
 	peer = ENetMultiplayerPeer.new()
