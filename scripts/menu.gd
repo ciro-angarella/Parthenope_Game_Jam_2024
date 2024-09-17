@@ -25,7 +25,12 @@ func _on_play_pressed() -> void:
 
 
 func _on_guide_pressed() -> void:
-	pass # Replace with function body.
+	var scene_to_load = "res://scenes/guide.tscn"  
+	var result = get_tree().change_scene_to_file(scene_to_load)
+	
+	if result != OK:
+		print("Errore nel caricamento della scena: ", result)
+
 
 
 func _on_credits_pressed() -> void:

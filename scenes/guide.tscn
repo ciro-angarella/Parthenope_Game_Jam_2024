@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dowqmwlx16m5o"]
+
+[ext_resource type="Script" path="res://scripts/guide.gd" id="1_qio43"]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_qio43")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -360.0
+offset_top = -40.0
+offset_right = 361.0
+offset_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b][color=blue]Lo scopo del gioco[/color][/b] è quello di [color=light_blue]eliminare gli avversari[/color] investendoli con la propria [color=white]palla di neve[/color], 
+che [color=light_blue]crescerà[/color] quanto più si corre, più sarà grande più male farà ai tuoi avversari! 
+Elimina tutti gli avversari dall'[color=silver]arena[/color] per vincere.
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
