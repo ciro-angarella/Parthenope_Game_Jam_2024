@@ -16,31 +16,19 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
-	TouchSound.play()
 	var scene_to_load = "res://scenes/arena.tscn"  
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	
 	if result != OK:
 		print("Errore nel caricamento della scena: ", result)
-		
-	MenuMusic.stop()
-	BattleMusic.play()
-
 
 
 
 func _on_guide_pressed() -> void:
-	TouchSound.play()
-	var scene_to_load = "res://scenes/guide.tscn"  
-	var result = get_tree().change_scene_to_file(scene_to_load)
-	
-	if result != OK:
-		print("Errore nel caricamento della scena: ", result)
-
+	pass # Replace with function body.
 
 
 func _on_credits_pressed() -> void:
-	TouchSound.play()
 	var scene_to_load = "res://scenes/credits.tscn"  
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	
@@ -49,5 +37,4 @@ func _on_credits_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	TouchSound.play()
 	get_tree().quit()

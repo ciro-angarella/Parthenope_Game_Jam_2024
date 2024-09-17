@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dn85dxbhmowb4"]
+[gd_scene load_steps=21 format=3 uid="uid://snye6gkvwppg"]
 
 [ext_resource type="Texture2D" uid="uid://76dunikuhhcr" path="res://Risorse/player_2/Down/frame 1_sprite_2.png" id="1_coo3n"]
 [ext_resource type="Texture2D" uid="uid://bdw1vqrp75mgl" path="res://Risorse/player_2/Down/frame 2_sprite_1.png" id="2_7orof"]
@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cuk580nci1bsw" path="res://Risorse/player_2/right/Layer 1_sprite_6.png" id="9_x6mfd"]
 [ext_resource type="Texture2D" uid="uid://bgg1icdj0aypg" path="res://Player/1.png" id="10_m22yf"]
 [ext_resource type="Texture2D" uid="uid://ckbuhtpvl5l42" path="res://Player/2.png" id="11_mkkhm"]
-[ext_resource type="Texture2D" uid="uid://c8l86pmgdk07i" path="res://ICONA.png" id="13_l3kkt"]
-[ext_resource type="Script" path="res://scripts/snow_ball_script.gd" id="14_c2tsr"]
+[ext_resource type="Texture2D" uid="uid://b5gelpacwurt4" path="res://Risorse/snowball/Opera_senza_titolo-1.png" id="13_p57t1"]
+[ext_resource type="Texture2D" uid="uid://fxiv3kks85m3" path="res://Risorse/snowball/Opera_senza_titolo-2.png" id="14_08wtf"]
+[ext_resource type="Texture2D" uid="uid://da0d2fqxath3r" path="res://Risorse/snowball/Opera_senza_titolo-3.png" id="15_04k8o"]
+[ext_resource type="Texture2D" uid="uid://cawoso1sot2ph" path="res://Risorse/snowball/Opera_senza_titolo-4.png" id="16_8hw7t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ykfq"]
 animations = [{
@@ -78,8 +80,28 @@ animations = [{
 radius = 10.8
 height = 48.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_aw2vd"]
-radius = 154.871
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5a68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_p57t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_08wtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_04k8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8hw7t")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uc8o"]
+radius = 127.089
 
 [node name="player_2" type="CharacterBody2D"]
 z_as_relative = false
@@ -94,18 +116,19 @@ frame_progress = 0.363914
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_f0tka")
 
-[node name="Snowball" type="Area2D" parent="."]
+[node name="Snowball2" type="Area2D" parent="."]
 position = Vector2(23, 7)
 scale = Vector2(0.1, 0.1)
+collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Snowball"]
-position = Vector2(0, 90)
-scale = Vector2(0.607422, 0.516113)
-texture = ExtResource("13_l3kkt")
-script = ExtResource("14_c2tsr")
+[node name="roll" type="AnimatedSprite2D" parent="Snowball2"]
+position = Vector2(-34, 56)
+scale = Vector2(6.16667, 5.58333)
+sprite_frames = SubResource("SpriteFrames_q5a68")
+animation = &"roll"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball"]
-position = Vector2(1.90735e-06, 80)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball2/roll"]
+position = Vector2(5.24521e-06, 1.79104)
 rotation = -3.14159
-scale = Vector2(1.02303, 1.00068)
-shape = SubResource("CircleShape2D_aw2vd")
+scale = Vector2(0.165897, 0.179226)
+shape = SubResource("CircleShape2D_3uc8o")
