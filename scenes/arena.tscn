@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bvnq7rk6si6n" path="res://Risorse/TileSheet_Finale.png" id="2_1v1fd"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_ahna2"]
-[ext_resource type="PackedScene" uid="uid://cc2wjxk0f6yh6" path="res://Player/player_1.tscn" id="3_6ob05"]
+[ext_resource type="PackedScene" uid="uid://cxlnaqui6xihn" path="res://Player/player_1.tscn" id="3_6ob05"]
 [ext_resource type="PackedScene" uid="uid://snye6gkvwppg" path="res://Player/player_2.tscn" id="4_onlqd"]
-[ext_resource type="PackedScene" uid="uid://duuueekh0ohj0" path="res://Player/player_3.tscn" id="5_b7528"]
+[ext_resource type="PackedScene" path="res://Player/player_3.tscn" id="5_b7528"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oi7m8"]
 texture = ExtResource("2_1v1fd")
