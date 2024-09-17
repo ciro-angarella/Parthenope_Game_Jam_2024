@@ -21,6 +21,10 @@ func _on_play_pressed() -> void:
 	
 	if result != OK:
 		print("Errore nel caricamento della scena: ", result)
+		
+	MenuMusic.stop()
+	BattleMusic.play()
+
 
 
 

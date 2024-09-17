@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mlg5uyuyhux7"]
+
+[ext_resource type="AudioStream" uid="uid://ciuvyis33ewv1" path="res://Risorse/Suoni gioco/8 BIT Battaglia.wav" id="1_ct1vk"]
+
+[node name="battleMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ct1vk")
