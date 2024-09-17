@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://blv5ff5h4obdc"]
+[gd_scene load_steps=9 format=4 uid="uid://blv5ff5h4obdc"]
 
+[ext_resource type="Texture2D" uid="uid://b4tqri58apc45" path="res://Risorse/blank bg.png" id="1_baa21"]
 [ext_resource type="Texture2D" uid="uid://bvnq7rk6si6n" path="res://Risorse/TileSheet_Finale.png" id="2_1v1fd"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_ahna2"]
 [ext_resource type="PackedScene" uid="uid://cxlnaqui6xihn" path="res://Player/player_1.tscn" id="3_6ob05"]
@@ -325,6 +326,14 @@ sources/0 = SubResource("TileSetAtlasSource_oi7m8")
 
 [node name="Arena" type="Node2D"]
 z_index = -100
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1883.0
+offset_top = -1790.0
+offset_right = 37.0
+offset_bottom = -710.0
+scale = Vector2(2.48, 3.68)
+texture = ExtResource("1_baa21")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-114, 207)
