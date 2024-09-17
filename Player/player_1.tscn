@@ -1,16 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6ngud0sp55li"]
+[gd_scene load_steps=18 format=3 uid="uid://c6ngud0sp55li"]
 
 [ext_resource type="Texture2D" uid="uid://c3ve1pjojx7mo" path="res://Risorse/orso/up/walk up 1.png" id="2_54pk5"]
 [ext_resource type="Script" path="res://Player/player_1.gd" id="2_xrr2w"]
 [ext_resource type="Texture2D" uid="uid://c8l86pmgdk07i" path="res://ICONA.png" id="3_f13js"]
 [ext_resource type="Texture2D" uid="uid://bnutafn3u00lc" path="res://Risorse/orso/up/walk up 2.png" id="3_povtw"]
 [ext_resource type="Script" path="res://scripts/snow_ball_script.gd" id="3_pyi08"]
+[ext_resource type="Texture2D" uid="uid://cgi02w5bmpswq" path="res://Risorse/orso/left/Layer 1_sprite_1.png" id="4_jna6j"]
 [ext_resource type="Texture2D" uid="uid://b3xef7jfvu275" path="res://Risorse/orso/down/walk down 1.png" id="4_qt33w"]
-[ext_resource type="Texture2D" uid="uid://c2c7htspydt2v" path="res://Risorse/orso/left/side walk png 1.png" id="4_tveiu"]
 [ext_resource type="Texture2D" uid="uid://cl6oi2xmn1n5k" path="res://Risorse/orso/down/walk down 2.png" id="5_f71hm"]
-[ext_resource type="Texture2D" uid="uid://3d4bbvom7y4k" path="res://Risorse/orso/left/side walk png 2.png" id="5_tj2ua"]
-[ext_resource type="Texture2D" uid="uid://cn1ev7tkhlhsf" path="res://Risorse/orso/right/side walk png 1_1 (1).png" id="6_po1mr"]
-[ext_resource type="Texture2D" uid="uid://bto52ewkdj7yt" path="res://Risorse/orso/right/side walk png 1_1 (2).png" id="7_u7nqi"]
+[ext_resource type="Texture2D" uid="uid://dsgdtowaw8750" path="res://Risorse/orso/left/Layer 1_sprite_2.png" id="5_spq7e"]
+[ext_resource type="Texture2D" uid="uid://dadxjyispnnfr" path="res://Risorse/orso/left/Layer 1_sprite_3.png" id="6_k6m38"]
+[ext_resource type="Texture2D" uid="uid://b6dfdmunra5tn" path="res://Risorse/orso/left/Layer 1_sprite_4.png" id="7_mpqxh"]
+[ext_resource type="Texture2D" uid="uid://cor4lyxoqvyxv" path="res://Risorse/orso/right/Layer 1_sprite_1.png" id="8_8vlqd"]
+[ext_resource type="Texture2D" uid="uid://dr0cadbv575vt" path="res://Risorse/orso/right/Layer 1_sprite_2.png" id="9_2ya0i"]
+[ext_resource type="Texture2D" uid="uid://bq2j606sollmj" path="res://Risorse/orso/right/Layer 1_sprite_3.png" id="10_p25m2"]
+[ext_resource type="Texture2D" uid="uid://b5j5yegxolcfu" path="res://Risorse/orso/right/Layer 1_sprite_4.png" id="11_xx624"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jvc78"]
 animations = [{
@@ -23,29 +27,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_tveiu")
+"texture": ExtResource("4_jna6j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tj2ua")
+"texture": ExtResource("5_spq7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k6m38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mpqxh")
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_po1mr")
+"texture": ExtResource("8_8vlqd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_u7nqi")
+"texture": ExtResource("9_2ya0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p25m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xx624")
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -56,7 +72,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up",
-"speed": 7.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch7fs"]
@@ -67,7 +83,7 @@ script = ExtResource("2_xrr2w")
 
 [node name="walk" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jvc78")
-animation = &"left"
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
