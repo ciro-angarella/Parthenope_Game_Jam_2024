@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1ev7tkhlhsf"
-path="res://.godot/imported/side walk png 1_1 (1).png-2a5191ca9467a8c375573bd5d521fe7b.ctex"
+uid="uid://bgg1icdj0aypg"
+path="res://.godot/imported/1.png-dd99a593a1e6a2cb395437371313a5b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Risorse/orso/right/side walk png 1_1 (1).png"
-dest_files=["res://.godot/imported/side walk png 1_1 (1).png-2a5191ca9467a8c375573bd5d521fe7b.ctex"]
+source_file="res://Player/1.png"
+dest_files=["res://.godot/imported/1.png-dd99a593a1e6a2cb395437371313a5b1.ctex"]
 
 [params]
 

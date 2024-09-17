@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bto52ewkdj7yt"
-path="res://.godot/imported/side walk png 1_1 (2).png-b196ad1ad1675d84066e8420774e197f.ctex"
+uid="uid://b6dfdmunra5tn"
+path="res://.godot/imported/Layer 1_sprite_4.png-740f2995baf40f399dd848f1bb66b256.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Risorse/orso/right/side walk png 1_1 (2).png"
-dest_files=["res://.godot/imported/side walk png 1_1 (2).png-b196ad1ad1675d84066e8420774e197f.ctex"]
+source_file="res://Risorse/orso/left/Layer 1_sprite_4.png"
+dest_files=["res://.godot/imported/Layer 1_sprite_4.png-740f2995baf40f399dd848f1bb66b256.ctex"]
 
 [params]
 
