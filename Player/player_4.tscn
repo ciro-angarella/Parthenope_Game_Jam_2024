@@ -1,0 +1,125 @@
+[gd_scene load_steps=20 format=3 uid="uid://ch07id3c5hoq1"]
+
+[ext_resource type="Texture2D" uid="uid://c8crvujahy0j7" path="res://Risorse/Player_4/Down/PenguinRunBS1.png" id="1_yroug"]
+[ext_resource type="Texture2D" uid="uid://bc5flkc71hjsd" path="res://Risorse/Player_4/Down/PenguinRunBS2.png" id="2_omx3b"]
+[ext_resource type="Texture2D" uid="uid://boi7anqe0e5eq" path="res://Risorse/Player_4/left/PenguinRunB1.png" id="3_gmmaf"]
+[ext_resource type="Texture2D" uid="uid://bd3bj0iwv1d8p" path="res://Risorse/Player_4/left/PenguinRunB2.png" id="4_xy4o8"]
+[ext_resource type="Texture2D" uid="uid://hmnhorn0syp3" path="res://Risorse/Player_4/left/PenguinRunB3.png" id="5_rwo4v"]
+[ext_resource type="Texture2D" uid="uid://digc80xxjgpp0" path="res://Risorse/Player_4/left/PenguinRunB4.png" id="6_rsadr"]
+[ext_resource type="Texture2D" uid="uid://846spcxde1m4" path="res://Risorse/Player_4/Right/PenguinRunB1.png" id="7_whrlp"]
+[ext_resource type="Texture2D" uid="uid://bxyh4tnjv27fa" path="res://Risorse/Player_4/Right/PenguinRunB2.png" id="8_55tlp"]
+[ext_resource type="Texture2D" uid="uid://b36ds3a7iux06" path="res://Risorse/Player_4/Right/PenguinRunB3.png" id="9_3i3pc"]
+[ext_resource type="Texture2D" uid="uid://dhhb61kb0blc5" path="res://Risorse/Player_4/Right/PenguinRunB4.png" id="10_5g0sn"]
+[ext_resource type="Texture2D" uid="uid://ipvlgvrm0g2n" path="res://Risorse/Player_4/Up/PenguinRunBN1.png" id="11_w4bft"]
+[ext_resource type="Texture2D" uid="uid://d3dd3qmb525qn" path="res://Risorse/Player_4/Up/PenguinRunBN2.png" id="12_4tso4"]
+[ext_resource type="Texture2D" uid="uid://b5gelpacwurt4" path="res://Risorse/snowball/Opera_senza_titolo-1.png" id="13_huxqk"]
+[ext_resource type="Texture2D" uid="uid://fxiv3kks85m3" path="res://Risorse/snowball/Opera_senza_titolo-2.png" id="14_3ywy8"]
+[ext_resource type="Texture2D" uid="uid://da0d2fqxath3r" path="res://Risorse/snowball/Opera_senza_titolo-3.png" id="15_aicgf"]
+[ext_resource type="Texture2D" uid="uid://cawoso1sot2ph" path="res://Risorse/snowball/Opera_senza_titolo-4.png" id="16_61awj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7oi7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yroug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_omx3b")
+}],
+"loop": true,
+"name": &"down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gmmaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xy4o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rwo4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rsadr")
+}],
+"loop": true,
+"name": &"left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_whrlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_55tlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3i3pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5g0sn")
+}],
+"loop": true,
+"name": &"right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_w4bft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4tso4")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ua8dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_huxqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3ywy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aicgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_61awj")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b715n"]
+radius = 127.089
+
+[node name="player_4" type="CharacterBody2D"]
+
+[node name="walk" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t7oi7")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Snowball" type="Area2D" parent="."]
+position = Vector2(23, 7)
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+
+[node name="roll" type="AnimatedSprite2D" parent="Snowball"]
+position = Vector2(-34, 56)
+scale = Vector2(6.16667, 5.58333)
+sprite_frames = SubResource("SpriteFrames_ua8dj")
+animation = &"roll"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball/roll"]
+position = Vector2(5.24521e-06, 1.79104)
+rotation = -3.14159
+scale = Vector2(0.165897, 0.179226)
+shape = SubResource("CircleShape2D_b715n")

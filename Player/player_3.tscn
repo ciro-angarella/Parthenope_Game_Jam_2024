@@ -103,8 +103,7 @@ radius = 127.089
 
 [node name="walk" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgtpa")
-animation = &"up"
-frame_progress = 0.654556
+animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
