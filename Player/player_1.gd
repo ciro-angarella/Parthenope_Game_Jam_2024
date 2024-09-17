@@ -94,10 +94,10 @@ func update_state():
 			update_ball_pos(Vector2(0, 10))
 		State.MOVING_LEFT:
 			walk_animation.play("left")
-			update_ball_pos(Vector2(-23, 0))
+			update_ball_pos(Vector2(-23, -5))
 		State.MOVING_RIGHT:
 			walk_animation.play("right")
-			update_ball_pos(Vector2(23, 0))
+			update_ball_pos(Vector2(23, -5))
 
 	if axis != Vector2.ZERO:
 		last_state = current_state
