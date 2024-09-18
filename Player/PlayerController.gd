@@ -153,6 +153,8 @@ func _on_snowball_body_entered(body: Node2D) -> void:
 		GameManager.damage_player(body.player_index, 2)
 	else:
 		GameManager.damage_player(body.player_index, 1)
+	body.get_node("HPLabel").clear()
+	body.get_node("HPLabel").parse_bbcode("[b][color=black]HP: "+ str(GameManager.Players[body.player_index].health) +"[/color][b]")	
 	body.current_ball_scale -= self.current_ball_scale
 	body.is_invincible = true
 	self.current_ball_scale = 0

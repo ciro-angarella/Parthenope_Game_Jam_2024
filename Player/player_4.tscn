@@ -132,4 +132,15 @@ rotation = -3.14159
 scale = Vector2(1.02303, 1.00068)
 shape = SubResource("CircleShape2D_b715n")
 
+[node name="HPLabel" type="RichTextLabel" parent="."]
+offset_left = -19.5
+offset_top = -42.25
+offset_right = 28.5
+offset_bottom = -19.25
+scale = Vector2(0.87, 0.87)
+bbcode_enabled = true
+text = "[b][color=black]HP: 5[/color][/b]"
+fit_content = true
+autowrap_mode = 0
+
 [connection signal="body_entered" from="Snowball" to="." method="_on_snowball_body_entered"]
