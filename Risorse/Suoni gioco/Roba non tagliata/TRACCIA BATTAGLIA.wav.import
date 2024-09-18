@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cuqkuvi1onhe"
+path="res://.godot/imported/TRACCIA BATTAGLIA.wav-7e1f6e63f902a90d54b57db9db197b16.sample"
+
+[deps]
+
+source_file="res://Risorse/Suoni gioco/Roba non tagliata/TRACCIA BATTAGLIA.wav"
+dest_files=["res://.godot/imported/TRACCIA BATTAGLIA.wav-7e1f6e63f902a90d54b57db9db197b16.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

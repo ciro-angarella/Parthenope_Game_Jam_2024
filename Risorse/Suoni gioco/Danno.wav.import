@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxpye1a4mbyff"
+path="res://.godot/imported/Danno.wav-55a6e43173d0522c0beba07c14ebc685.sample"
+
+[deps]
+
+source_file="res://Risorse/Suoni gioco/Danno.wav"
+dest_files=["res://.godot/imported/Danno.wav-55a6e43173d0522c0beba07c14ebc685.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

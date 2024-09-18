@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://w47f6e15orhg"]
+
+[ext_resource type="AudioStream" uid="uid://pdasxtuaie1q" path="res://Risorse/Suoni gioco/touch.wav" id="1_7xnwn"]
+
+[node name="touchSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_7xnwn")

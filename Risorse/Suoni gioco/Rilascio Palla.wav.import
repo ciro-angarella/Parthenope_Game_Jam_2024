@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpapcra0lwkbo"
+path="res://.godot/imported/Rilascio Palla.wav-b51b161a16e408abf06ca098c1ca3f7a.sample"
+
+[deps]
+
+source_file="res://Risorse/Suoni gioco/Rilascio Palla.wav"
+dest_files=["res://.godot/imported/Rilascio Palla.wav-b51b161a16e408abf06ca098c1ca3f7a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
