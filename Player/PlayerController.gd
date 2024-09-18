@@ -146,7 +146,10 @@ func _on_snowball_body_entered(body: Node2D) -> void:
 		
 	if body.is_invincible:
 		return
-	if self.current_ball_scale >= 0.20:
+		
+	if self.current_ball_scale >= 0.24:
+		GameManager.damage_player(body.player_index, 3)
+	elif self.current_ball_scale >= 0.20:
 		GameManager.damage_player(body.player_index, 2)
 	else:
 		GameManager.damage_player(body.player_index, 1)
