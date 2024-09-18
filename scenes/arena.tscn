@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://blv5ff5h4obdc"]
+[gd_scene load_steps=9 format=4 uid="uid://h5a6gvksu0x0"]
 
 [ext_resource type="Texture2D" uid="uid://b4tqri58apc45" path="res://Risorse/blank bg.png" id="1_baa21"]
 [ext_resource type="Texture2D" uid="uid://bvnq7rk6si6n" path="res://Risorse/TileSheet_Finale.png" id="2_1v1fd"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_ahna2"]
 [ext_resource type="PackedScene" uid="uid://cxlnaqui6xihn" path="res://Player/player_1.tscn" id="3_6ob05"]
 [ext_resource type="PackedScene" uid="uid://snye6gkvwppg" path="res://Player/player_2.tscn" id="4_onlqd"]
-[ext_resource type="PackedScene" path="res://Player/player_3.tscn" id="5_b7528"]
+[ext_resource type="PackedScene" uid="uid://duuueekh0ohj0" path="res://Player/player_3.tscn" id="5_b7528"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3e3i6"]
 texture = ExtResource("2_1v1fd")
@@ -357,7 +357,6 @@ player_index = 1
 
 [node name="Player3" parent="." groups=["PlayerCharacters"] instance=ExtResource("5_b7528")]
 position = Vector2(770, 37)
-scale = Vector2(1.75, 1.75)
 player_index = 2
 
 [node name="Player4" parent="." groups=["PlayerCharacters"] instance=ExtResource("3_6ob05")]

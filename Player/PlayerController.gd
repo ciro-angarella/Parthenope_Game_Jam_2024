@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 const MAX_BALL_SCALE = 0.25
-const MAX_SPEED = 250
-const ACCELERATION = 1000
+const MAX_SPEED = 500
+const ACCELERATION = 1500
 const MAX_INVINCIBLE_SECONDS = 3
+
+const MIN_SPEED = 5
+var random_generator
 
 @export var player_index: int
 
@@ -30,11 +33,12 @@ var last_state = State.IDLE
 func _ready() -> void:
 	player_index_string = str(player_index)
 	get_node("Snowball").scale = Vector2(current_ball_scale, current_ball_scale)
+	random_generator = RandomNumberGenerator.new()
 
 func _physics_process(delta):
 	if GameManager.Players[self.player_index].health <= 0:
 		self.queue_free()
-		GameManager.AlivePlayerIndices[self.player_index] = false
+		GameManager.kill_player(self.player_index)
 	update_invincibility(delta)
 	move(delta)
 	update_state()
@@ -57,6 +61,14 @@ func move(delta):
 		ball_building_factor = 0.5
 	
 	velocity += axis * ball_scale_multiplier * ball_building_factor * ACCELERATION * delta
+	
+	random_generator.randomize()
+	if abs(velocity.x) <= MIN_SPEED:
+		velocity.x = random_generator.randf_range(-MAX_SPEED * 0.5, MAX_SPEED * 0.5)
+	if abs(velocity.y) <= MIN_SPEED:
+		velocity.y = random_generator.randf_range(-MAX_SPEED * 0.5, MAX_SPEED * 0.5)
+
+	
 	velocity = velocity.limit_length(MAX_SPEED)
 	move_and_slide()
 

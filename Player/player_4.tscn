@@ -105,6 +105,7 @@ animations = [{
 radius = 127.089
 
 [node name="player_4" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_2ee1x")
 
 [node name="walk" type="AnimatedSprite2D" parent="."]

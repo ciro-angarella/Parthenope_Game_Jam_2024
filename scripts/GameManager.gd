@@ -7,6 +7,7 @@ var AlivePlayerIndices = {
 	2: true,
 	3: true
 }
+@onready var AlivePlayersCount = 4
 var IsOnline = false
 
 func print_all_players_data():
@@ -15,12 +16,23 @@ func print_all_players_data():
 
 func damage_player(index: int, amount: int):
 	Players[index].health -= amount;
+	
+func kill_player(index: int):
+	AlivePlayerIndices[index] = false
+	AlivePlayersCount -= 1
+	if AlivePlayersCount <= 1:
+		reset_players()
+		await get_tree().create_timer(5.0).timeout
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _ready() -> void:
+	reset_players()
+
+func _process(delta: float) -> void:
+	pass
+
+func reset_players():
 	for i in range(4):
 		Players[i] = {
 			"health": 5
 		}
-
-func _process(delta: float) -> void:
-	pass
