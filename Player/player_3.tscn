@@ -104,9 +104,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_otyjo"]
 radius = 127.089
 
-[node name="Player_3" type="CharacterBody2D"]
-scale = Vector2(2.5, 2.5)
+[node name="Player_3" type="CharacterBody2D" groups=["PlayerCharacters"]]
+z_as_relative = false
+scale = Vector2(3.25, 3.25)
+collision_mask = 7
 script = ExtResource("1_aapx4")
+player_index = 2
 
 [node name="walk" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgtpa")
@@ -116,6 +119,7 @@ animation = &"down"
 shape = SubResource("CapsuleShape2D_dco2j")
 
 [node name="Snowball" type="Area2D" parent="."]
+z_as_relative = false
 position = Vector2(23, 7)
 scale = Vector2(0.1, 0.1)
 collision_layer = 4

@@ -1,13 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://blv5ff5h4obdc"]
+[gd_scene load_steps=7 format=4 uid="uid://blv5ff5h4obdc"]
 
 [ext_resource type="Texture2D" uid="uid://b4tqri58apc45" path="res://Risorse/blank bg.png" id="1_baa21"]
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_fe3jo"]
 [ext_resource type="Texture2D" uid="uid://bvnq7rk6si6n" path="res://Risorse/TileSheet_Finale.png" id="2_1v1fd"]
 [ext_resource type="PackedScene" uid="uid://b80mwjc8jueo6" path="res://particles/snow_particles.tscn" id="2_ahna2"]
-[ext_resource type="PackedScene" uid="uid://cxlnaqui6xihn" path="res://Player/player_1.tscn" id="3_6ob05"]
-[ext_resource type="PackedScene" uid="uid://snye6gkvwppg" path="res://Player/player_2.tscn" id="4_onlqd"]
-[ext_resource type="PackedScene" uid="uid://duuueekh0ohj0" path="res://Player/player_3.tscn" id="5_b7528"]
-[ext_resource type="PackedScene" uid="uid://ch07id3c5hoq1" path="res://Player/player_4.tscn" id="7_flfk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3e3i6"]
 texture = ExtResource("2_1v1fd")
@@ -328,6 +324,7 @@ sources/0 = SubResource("TileSetAtlasSource_3e3i6")
 
 [node name="Arena" type="Node2D"]
 z_index = -100
+z_as_relative = false
 script = ExtResource("1_fe3jo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -350,18 +347,3 @@ zoom = Vector2(0.6, 0.6)
 
 [node name="SnowParticles" parent="." instance=ExtResource("2_ahna2")]
 position = Vector2(320, -787)
-
-[node name="Player1" parent="." groups=["PlayerCharacters"] instance=ExtResource("3_6ob05")]
-position = Vector2(822, 524)
-
-[node name="Player2" parent="." groups=["PlayerCharacters"] instance=ExtResource("4_onlqd")]
-position = Vector2(-22, 470)
-player_index = 1
-
-[node name="Player3" parent="." groups=["PlayerCharacters"] instance=ExtResource("5_b7528")]
-position = Vector2(770, 37)
-scale = Vector2(4, 4)
-player_index = 2
-
-[node name="Player4" parent="." groups=["PlayerCharacters"] instance=ExtResource("7_flfk3")]
-player_index = 3

@@ -54,13 +54,14 @@ func update_invincibility(delta):
 
 func move(delta):
 	axis = get_input_axis()
-	var ball_scale_multiplier = 1 - (current_ball_scale / MAX_BALL_SCALE) + 0.5
+	#var ball_scale_multiplier = 1 - (current_ball_scale / MAX_BALL_SCALE) + 0.5
+	var ball_scale_multiplier = (1 + current_ball_scale) * 2 - 1 + 0.00001
 	
 	var ball_building_factor = 1
 	if(Input.is_action_pressed("build_ball_" + player_index_string)):
 		ball_building_factor = 0.5
 	
-	velocity += axis * ball_scale_multiplier * ball_building_factor * ACCELERATION * delta
+	velocity += axis * ball_building_factor * ACCELERATION * delta / ball_scale_multiplier
 	
 	random_generator.randomize()
 	if abs(velocity.x) <= MIN_SPEED:
@@ -68,7 +69,6 @@ func move(delta):
 	if abs(velocity.y) <= MIN_SPEED:
 		velocity.y = random_generator.randf_range(-MAX_SPEED * 0.5, MAX_SPEED * 0.5)
 
-	
 	velocity = velocity.limit_length(MAX_SPEED)
 	move_and_slide()
 
