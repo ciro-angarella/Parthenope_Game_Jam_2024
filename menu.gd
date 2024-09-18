@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
-	var scene_to_load = "res://scenes/arena.tscn"  
+	GameManager.AlivePlayersCount = 4
+	var scene_to_load = "res://scenes/arena.tscn"
 	var result = get_tree().change_scene_to_file(scene_to_load)
 	
 	if result != OK:
