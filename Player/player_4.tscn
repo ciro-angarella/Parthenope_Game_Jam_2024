@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://ch07id3c5hoq1"]
+[gd_scene load_steps=22 format=3 uid="uid://ch07id3c5hoq1"]
 
+[ext_resource type="Script" path="res://Player/PlayerController.gd" id="1_2ee1x"]
 [ext_resource type="Texture2D" uid="uid://c8crvujahy0j7" path="res://Risorse/Player_4/Down/PenguinRunBS1.png" id="1_yroug"]
 [ext_resource type="Texture2D" uid="uid://bc5flkc71hjsd" path="res://Risorse/Player_4/Down/PenguinRunBS2.png" id="2_omx3b"]
 [ext_resource type="Texture2D" uid="uid://boi7anqe0e5eq" path="res://Risorse/Player_4/left/PenguinRunB1.png" id="3_gmmaf"]
@@ -76,6 +77,10 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fafsb"]
+radius = 17.0
+height = 50.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ua8dj"]
 animations = [{
 "frames": [{
@@ -100,12 +105,14 @@ animations = [{
 radius = 127.089
 
 [node name="player_4" type="CharacterBody2D"]
+script = ExtResource("1_2ee1x")
 
 [node name="walk" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t7oi7")
 animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fafsb")
 
 [node name="Snowball" type="Area2D" parent="."]
 position = Vector2(23, 7)
@@ -118,8 +125,10 @@ scale = Vector2(6.16667, 5.58333)
 sprite_frames = SubResource("SpriteFrames_ua8dj")
 animation = &"roll"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball/roll"]
-position = Vector2(5.24521e-06, 1.79104)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball"]
+position = Vector2(-34, 66)
 rotation = -3.14159
-scale = Vector2(0.165897, 0.179226)
+scale = Vector2(1.02303, 1.00068)
 shape = SubResource("CircleShape2D_b715n")
+
+[connection signal="body_entered" from="Snowball" to="." method="_on_snowball_body_entered"]

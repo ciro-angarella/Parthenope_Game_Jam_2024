@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_nwau8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -777.0
 offset_top = -681.0
 offset_right = -737.0

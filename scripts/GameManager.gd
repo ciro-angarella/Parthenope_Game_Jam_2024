@@ -2,19 +2,19 @@ extends Node
 
 var Players = {}
 var AlivePlayerIndices = {
+	0: true,
 	1: true,
 	2: true,
-	3: true,
-	4: true
+	3: true
 }
 var IsOnline = false
 
-func printAllPlayers():
+func print_all_players_data():
 	for i in range(4):
 		print(str(i) + ", vita:" + str(Players[i].health))
 
-func damagePlayer(playerIndex: int):
-	Players[playerIndex - 1].health -= 1;
+func damage_player(index: int):
+	Players[index].health -= 1;
 
 func _ready() -> void:
 	for i in range(4):
