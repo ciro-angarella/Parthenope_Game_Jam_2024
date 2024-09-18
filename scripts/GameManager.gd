@@ -32,7 +32,9 @@ func _process(delta: float) -> void:
 	pass
 
 func reset_players():
+	AlivePlayersCount = 4
 	for i in range(4):
+		AlivePlayerIndices = true
 		Players[i] = {
 			"health": 5
 		}
