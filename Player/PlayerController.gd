@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const MAX_BALL_SCALE = 0.25
 const MAX_SPEED = 250
-const MIN_SPEED = 5
 const ACCELERATION = 1000
 const MAX_INVINCIBLE_SECONDS = 3
 
@@ -16,7 +15,6 @@ const MAX_INVINCIBLE_SECONDS = 3
 @onready var invincibility_counter = 0.0
 
 var player_index_string
-var random_generator
 
 enum State {
 	IDLE,
@@ -32,7 +30,6 @@ var last_state = State.IDLE
 func _ready() -> void:
 	player_index_string = str(player_index)
 	get_node("Snowball").scale = Vector2(current_ball_scale, current_ball_scale)
-	random_generator = RandomNumberGenerator.new()
 
 func _physics_process(delta):
 	if GameManager.Players[self.player_index].health <= 0:
@@ -60,12 +57,6 @@ func move(delta):
 		ball_building_factor = 0.5
 	
 	velocity += axis * ball_scale_multiplier * ball_building_factor * ACCELERATION * delta
-	random_generator.randomize()
-	if abs(velocity.x) <= MIN_SPEED:
-		velocity.x = random_generator.randf_range(-MAX_SPEED * 0.5, MAX_SPEED * 0.5)
-	if abs(velocity.y) <= MIN_SPEED:
-		velocity.y = random_generator.randf_range(-MAX_SPEED * 0.5, MAX_SPEED * 0.5)
-	
 	velocity = velocity.limit_length(MAX_SPEED)
 	move_and_slide()
 
@@ -139,11 +130,14 @@ func _on_snowball_body_entered(body: Node2D) -> void:
 	var v2 = body.velocity.normalized()
 	var theta  = v1.dot(v2)
 	var v1_out = self.velocity * theta + body.velocity * theta
-	velocity *= v1_out * MIN_SPEED
+	velocity += v1_out * ACCELERATION
 		
 	if body.is_invincible:
 		return
-	GameManager.damage_player(body.player_index)
+	if self.current_ball_scale >= 0.20:
+		GameManager.damage_player(body.player_index, 2)
+	else:
+		GameManager.damage_player(body.player_index, 1)
 	body.current_ball_scale -= self.current_ball_scale
 	body.is_invincible = true
 	self.current_ball_scale = 0
